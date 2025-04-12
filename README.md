@@ -1,18 +1,19 @@
-# nk256_full
+# nk256
 
-Unicode-based Base-256,000 numeral encoding system (full version).
+Unicode-based Base-256,000 numeral encoding system.
 
-- Uses 256,000 Unicode characters starting from U+20000
-- Designed for ultra-compressed integer encoding
-- Not all characters are human-readable (may display as □ or blank)
-- Fully reversible: perfect for database tagging, prime maps, internal IDs
+- Uses 256,000 Unicode characters from U+20000 and upward
+- Designed for ultra-compression of massive integers
+- Not all characters may render properly (some may appear as □)
+- Fully reversible and numerically sortable
+- Ideal for internal compression, tagging, indexing
 
 ## Example
 
 ```python
-import nk256_full as nk256
+import nk256
 
-n = 98765432101234567890
+n = 12345678901234567890
 encoded = nk256.encode_nk256(n)
 decoded = nk256.decode_nk256(encoded)
 
